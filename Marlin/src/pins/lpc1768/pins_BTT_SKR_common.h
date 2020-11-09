@@ -113,5 +113,9 @@
   #define MOSI_PIN                         P0_09
   #define SS_PIN               ONBOARD_SD_CS_PIN
 #elif SD_CONNECTION_IS(CUSTOM_CABLE)
-  #error "No custom SD drive cable defined for this board."
+  #define SD_DETECT_PIN    P1_31
+  #define SCK_PIN          P0_15
+  #define MISO_PIN         P0_17
+  #define MOSI_PIN         P0_18
+  #define SS_PIN           P0_16
 #endif
