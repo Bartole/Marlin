@@ -41,12 +41,12 @@
  * here we define this default string as the date where the latest release
  * version was tagged.
  */
-#define STRING_DISTRIBUTION_DATE "2020-11-15"
+#define STRING_DISTRIBUTION_DATE "2020-11-16"
 
 /**
  * Defines a generic printer name to be output to the LCD after booting Marlin.
  */
-#define MACHINE_NAME "E3Pro Henk"
+#define MACHINE_NAME "E3-Pro Henk"
 
 /**
  * The SOURCE_CODE_URL is the location where users will find the Marlin Source
