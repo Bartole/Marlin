@@ -81,7 +81,7 @@ enum EndstopEnum : char {
   #if HAS_Y_MIN || HAS_Y_MAX
     , Y_ENDSTOP = TERN(Y_HOME_TO_MAX, Y_MAX, Y_MIN)
   #endif
-  #if HAS_Z_MIN || HAS_Z_MAX
+  #if HAS_Z_MIN || HAS_Z_MAX || HOMING_Z_WITH_PROBE
     , Z_ENDSTOP = TERN(Z_HOME_TO_MAX, Z_MAX, TERN(HOMING_Z_WITH_PROBE, Z_MIN_PROBE, Z_MIN))
   #endif
 };
@@ -223,7 +223,7 @@ class Endstops {
       typedef struct {
         union {
           bool any;
-          struct { bool x:1, y:1, z:1; };
+          struct { bool LINEAR_AXIS_LIST(x:1, y:1, z:1, i:1, j:1, k:1); };
         };
       } tmc_spi_homing_t;
       static tmc_spi_homing_t tmc_spi_homing;
